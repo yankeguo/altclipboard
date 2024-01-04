@@ -29,13 +29,14 @@
       case "paste":
         const clipboard = { value: _clipboard.value };
         _clipboard.value = "";
-        const [tab] = await chrome.tabs.query({
-          active: true,
-          lastFocusedWindow: true,
+
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          function: (value) => {
+            document.execCommand("insertText", false, value);
+          },
+          args: [clipboard.value],
         });
-        if (tab) {
-          await chrome.tabs.sendMessage(tab.id, clipboard);
-        }
         break;
       case "clear":
         _clipboard.value = "";

@@ -9,17 +9,9 @@
         "128": "icons/icon-128.png"
     },
     "permissions": [
-        "contextMenus"
-    ],
-    "content_scripts": [
-        {
-            "matches": [
-                "*://*/*"
-            ],
-            "js": [
-                "content-script.js"
-            ]
-        }
+        "contextMenus",
+        "activeTab",
+        "scripting"
     ],
     "background": {
         "service_worker": "background.js"
