@@ -1,6 +1,6 @@
 # AltClipboard
 
-A browser extension providing a alternative clipboard for secret data, without using system clipboard
+A browser extension providing an alternative clipboard for secure text, without using system clipboard
 
 ## Credits
 
